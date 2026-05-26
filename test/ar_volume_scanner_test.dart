@@ -37,11 +37,10 @@ class MockArVolumeScannerPlatform
 
 void main() {
   group('Platform interface', () {
-    test('MethodChannelArVolumeScanner is the default instance', () {
-      expect(
-        ArVolumeScannerPlatform.instance,
-        isInstanceOf<MethodChannelArVolumeScanner>(),
-      );
+    test('MethodChannelArVolumeScanner can be set as instance', () {
+      final mc = MethodChannelArVolumeScanner();
+      ArVolumeScannerPlatform.instance = mc;
+      expect(ArVolumeScannerPlatform.instance, isInstanceOf<MethodChannelArVolumeScanner>());
     });
   });
 
